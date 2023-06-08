@@ -1,0 +1,66 @@
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* автоматические колонки, каждая минимум 300px ширины */
+    grid-gap: 40px; /* промежуток между блоками */
+    max-width: 1340px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px grey;
+    padding: 40px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px grey;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-item:hover {
+    box-shadow: 1px 1px 19px rgb(255, 104, 3);
+    transform: scale(1.02);
+    transition: transform 500ms ease;
+}
+
+.img-items {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.name-items {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.info-items {
+    margin-top: auto;
+}
+
+.price-items {
+    color: rgb(253, 101, 0);
+}
+
+.btn-add-to-backet {
+    font-family: 'Geologica', sans-serif;
+    margin-top: 25px;
+    cursor: pointer;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgb(24, 24, 24);
+    display: inline-block;
+}
+
+
+.btn-add-to-backet:hover {
+    transform: scale(1.05);
+    transition: transform 500ms ease;
+}
+

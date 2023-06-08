@@ -1,0 +1,44 @@
+.basketc {
+    max-width: 1360px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px grey;
+    padding: 30px;
+}
+
+.basketc-item {
+    box-shadow: 0px 0px 9px grey;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    max-height: 300px;
+    font-family: 'Montserrat', sans-serif;
+    img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .delete-bas-item {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        margin-left: 70%;
+    }
+}
+
+.basketc-item:hover {
+    box-shadow: 1px 1px 19px rgb(255, 104, 3);
+    transform: scale(1.01);
+    transition: transform 500ms ease;
+}
+
+.price-bas {
+    display: block;
+    margin-top: 50%;
+    color: rgb(253, 101, 0);
+    font-size: 25px;
+}
