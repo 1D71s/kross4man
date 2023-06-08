@@ -5,7 +5,7 @@ import images from '../images'
 import { AiOutlineClose } from "react-icons/ai";
 import { deleteFromBasket } from "../../store/mySlise";
 
-const ItemBasket = ({img, name, price, id}) => {
+const ItemBasket = ({img, name, price, id, count}) => {
 
     const dispatch = useDispatch()
 
@@ -20,7 +20,7 @@ const ItemBasket = ({img, name, price, id}) => {
                     <AiOutlineClose className="delete-bas-item" onClick={() => dispatch(deleteFromBasket({id}))}/>
                 </div>
                 <h1 className="price-bas">{price} UAH</h1>
-                <div></div>
+                <div className="count-item">Кількість: {count}</div>
             </div>
         </div>    
     )
@@ -41,6 +41,7 @@ const BasketC = () => {
                             img={bas.img}
                             name={bas.name}
                             price={bas.price}
+                            count={bas.count}
                         />
                     ))
                 }

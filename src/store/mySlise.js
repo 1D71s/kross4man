@@ -40,7 +40,7 @@ const shopSlice = createSlice({
     reducers: {
         addItemToBasket(state, action) {
             const item = state.product.find(i => i.id === action.payload.id)
-            state.basket.push(item)
+            state.basket.push({...item, count: 1})
         },
         deleteFromBasket(state, action) {
             state.basket = state.basket.filter(item => item.id !== action.payload.id)
