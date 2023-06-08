@@ -19,11 +19,17 @@ li {
     margin-right: 40px;
 }
 
+
 .basket {
     width: 30px;
     height: 30px;
     color: black;
     cursor: pointer;
+}
+
+.basket:hover {
+    transform: scale(1.1);
+    transition: transform 500ms ease;
 }
 
 .counter-basket {

@@ -32,6 +32,7 @@ const BasketC = () => {
     return (
         <div>
             <div className="basketc">
+                <div className="noitem">{basket.length === 0 && 'Кошик порожній'}</div>
                 {
                     basket.map(bas => (
                         <ItemBasket

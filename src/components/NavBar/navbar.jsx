@@ -16,7 +16,7 @@ function NavBar() {
             </Link>
             <div className='cont-basket'>
                 <Link to='/Basket'><FiShoppingCart className='basket'/></Link>
-                <p className='counter-basket'>{basket.length}</p>
+                {basket.length > 0 &&<p className='counter-basket'>{basket.length}</p>}
             </div>
         </nav> 
     )
