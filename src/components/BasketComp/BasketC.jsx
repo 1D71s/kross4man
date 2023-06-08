@@ -5,6 +5,7 @@ import images from '../images'
 import { AiOutlineClose } from "react-icons/ai";
 import { deleteFromBasket } from "../../store/mySlise";
 
+
 const ItemBasket = ({img, name, price, id, count}) => {
 
     const dispatch = useDispatch()
@@ -28,6 +29,7 @@ const ItemBasket = ({img, name, price, id, count}) => {
 
 const BasketC = () => {
     const basket = useSelector(state => state.shop.basket)
+    const totalPrice = basket.reduce((sum, item) => sum + item.price, 0);
 
     return (
         <div>
@@ -45,6 +47,10 @@ const BasketC = () => {
                         />
                     ))
                 }
+                {totalPrice > 0 && <div className="order">
+                    <div className="order-btn">Оформити замовлення</div>
+                    <div className="total-price">{totalPrice} UAH</div>
+                </div>}
             </div>
         </div>    
     )

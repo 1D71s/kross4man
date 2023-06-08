@@ -39,8 +39,25 @@ const shopSlice = createSlice({
     },
     reducers: {
         addItemToBasket(state, action) {
-            const item = state.product.find(i => i.id === action.payload.id)
-            state.basket.push({...item, count: 1})
+            const item = state.product.find(i => i.id === action.payload.id);
+            const existingItem = state.basket.find(i => i.id === action.payload.id);
+            const priceItem = item.price
+
+            if (existingItem) {
+                const updatedBasket = state.basket.map(item => {
+                        if (item.id === action.payload.id) {
+                            return { ...item, count: item.count + 1, price: item.price + priceItem};
+                        }
+                        return item;
+                });
+        
+                return { ...state, basket: updatedBasket };
+
+            } else {
+                const updatedBasket = [...state.basket, { ...item, count: 1 }];
+        
+                return { ...state, basket: updatedBasket };
+            }
         },
         deleteFromBasket(state, action) {
             state.basket = state.basket.filter(item => item.id !== action.payload.id)
