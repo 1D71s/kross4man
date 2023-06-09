@@ -1,10 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
 import './Product.scss'
 import images from '../images'
-import { addItemToBasket } from '../../store/mySlise'
+import { addItemToBasket, addSizeItem } from '../../store/mySlise'
 
-const ProductItems = ({id, name, img, price}) => {
 
+
+const ProductItems = ({id, name, img, price, size}) => {
+    
     const dispatch = useDispatch()
 
     return (
@@ -12,10 +14,18 @@ const ProductItems = ({id, name, img, price}) => {
             <img className='img-items' src={images[img]} alt='1'></img>
             <div className='info-items'>
                 <p className='name-items'>{name}</p>
+                <div className='size-cont'>
+                    {size.map((i) => (
+                        <span 
+                            key={i} 
+                            className='size-item'
+                            onClick={() => dispatch(addSizeItem({id, i}))}>{i}</span>
+                    ))}
+                </div>
                 <h2 className='price-items'>{price}</h2>
             </div>
             <div>
-                <div className='btn-add-to-backet' onClick={() => dispatch(addItemToBasket({id}))}>Купить</div>
+                <div className='btn-add-to-backet' onClick={() => dispatch(addItemToBasket({id, size}))}>Купить</div>
             </div>
         </div>    
     )
@@ -34,6 +44,7 @@ const Product = () => {
                         key={prod.id}
                         img={prod.img}
                         name={prod.name}
+                        size={prod.size}
                         price={`${prod.price} UAH`}/>
                 ))
             }

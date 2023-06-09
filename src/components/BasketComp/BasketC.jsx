@@ -4,9 +4,10 @@ import { useSelector, useDispatch } from "react-redux"
 import images from '../images'
 import { AiOutlineClose } from "react-icons/ai";
 import { deleteFromBasket } from "../../store/mySlise";
+import { Link } from "react-router-dom";
 
 
-const ItemBasket = ({img, name, price, id, count}) => {
+const ItemBasket = ({img, name, price, id, count, size}) => {
 
     const dispatch = useDispatch()
 
@@ -21,6 +22,7 @@ const ItemBasket = ({img, name, price, id, count}) => {
                     <AiOutlineClose className="delete-bas-item" onClick={() => dispatch(deleteFromBasket({id}))}/>
                 </div>
                 <h1 className="price-bas">{price} UAH</h1>
+                <div> Розмір: {size}</div>
                 <div className="count-item">Кількість: {count}</div>
             </div>
         </div>    
@@ -42,13 +44,16 @@ const BasketC = () => {
                             key={bas.id}
                             img={bas.img}
                             name={bas.name}
+                            size={bas.size}
                             price={bas.price}
                             count={bas.count}
                         />
                     ))
                 }
                 {totalPrice > 0 && <div className="order">
-                    <div className="order-btn">Оформити замовлення</div>
+                    <Link to='/form'>
+                        <div className="order-btn">Оформити замовлення</div>
+                    </Link>
                     <div className="total-price">{totalPrice} UAH</div>
                 </div>}
             </div>

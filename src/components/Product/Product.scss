@@ -63,4 +63,25 @@
     transform: scale(1.05);
     transition: transform 500ms ease;
 }
+.size-cont {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    font-family: 'Geologica', sans-serif;
+    .size-item {
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    .size-item:hover {
+        background-color: rgb(250, 126, 44);
+    }
+}
 
+.selected {
+    background-color: #ff0000;
+    color: #ffffff;
+    /* Другие стили для выбранного элемента */
+  }

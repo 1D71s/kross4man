@@ -61,21 +61,58 @@
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    .order-btn {
-        font-family: 'Geologica', sans-serif;
-        cursor: pointer;
-        background-color: rgb(65, 65, 65);
-        color: white;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0px 1px 5px rgb(24, 24, 24);
-        display: inline-block;
+}
+
+.order-btn {
+    font-family: 'Geologica', sans-serif;
+    cursor: pointer;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgb(24, 24, 24);
+    display: inline-block;
+}
+
+.total-price {
+    display: block;
+    color: rgb(253, 101, 0);
+    font-size: 25px;
+    font-family: 'Geologica', sans-serif;
+    font-size: 30px;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .order {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .order-btn {
+        margin-top: 20px;
+        width: 200px;
+        text-align: center;
+    }
+
     .total-price {
-        display: block;
-        color: rgb(253, 101, 0);
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+
+/* Адаптивные стили для планшетов и десктопов */
+@media (min-width: 769px) {
+    .order {
+        margin: 20px;
+        margin-bottom: 10px;
+    }
+
+    .order-btn {
+        padding: 15px;
+    }
+
+    .total-price {
         font-size: 25px;
-        font-family: 'Geologica', sans-serif;
-        font-size: 30px;
     }
 }
