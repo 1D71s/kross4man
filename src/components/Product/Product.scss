@@ -84,4 +84,13 @@
     background-color: #ff0000;
     color: #ffffff;
     /* Другие стили для выбранного элемента */
-  }
+}
+
+.active {
+    background-color: rgb(65, 65, 65);
+    color: white;
+}
+
+Link {
+    text-decoration: none;
+}

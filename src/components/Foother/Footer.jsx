@@ -19,7 +19,7 @@ const Footer = () => {
                     <h3>Социальные сети</h3><br/>
                     <p className='cont-link'>
                         <a href="https://www.instagram.com/kross4man.ua/?igshid=MmJiY2I4NDBkZg%3D%3D"><GrInstagram className='insta'/></a>
-                        <a href="https://rshopua.store/" className='ruha'></a>
+                        <a href="https://rshopua.store/" className='ruha'>{}</a>
                     </p>
                 </div>
             </div>
