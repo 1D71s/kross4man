@@ -4,15 +4,11 @@ const FormToOrder = () => {
     return (
         <div className='form-to-order'>
             <div>
-                <p>товар у замовленні</p>
-                <div>Товар</div>
+                <p className='otd'>Доставка:</p>
+                <p className='np'></p>
             </div>
             <div>
-                <p>Доставка</p>
-                <div>Нова Пошта</div>
-            </div>
-            <div>
-                <div>Данні отримувача</div>
+                <div className='otd'>Данні отримувача:</div>
                 <p>Прізвище</p>
                 <input type="text" />
                 <p>Iм'я</p>

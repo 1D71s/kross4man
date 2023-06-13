@@ -32,3 +32,21 @@
     box-shadow: 0px 1px 5px rgb(24, 24, 24);
     display: inline-block;
 }
+
+.np {
+    background-image: url('./Img/np.jpg');
+    background-size: cover; /* Подгоняет изображение под размер элемента */
+    background-position: center; /* Размещает изображение по центру элемента */
+    height: 50px;
+    width: 50px;
+    border-radius: 20%; /* Делает логотип круглым */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Добавляет небольшую тень */
+    margin-bottom: 20px;
+}
+
+.otd {
+    margin-bottom: 20px;
+    font-family: 'Geologica', sans-serif;
+    font-size: 20px;
+    color: rgb(56, 56, 56);
+}
