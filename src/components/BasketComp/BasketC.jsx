@@ -7,7 +7,8 @@ import { deleteFromBasket } from "../../store/mySlise";
 import { Link } from "react-router-dom";
 
 
-const ItemBasket = ({img, name, price, id, count, entrySize}) => {
+
+const ItemBasket = ({img, name, price, id, size, count}) => {
 
     const dispatch = useDispatch()
 
@@ -22,7 +23,7 @@ const ItemBasket = ({img, name, price, id, count, entrySize}) => {
                     <AiOutlineClose className="delete-bas-item" onClick={() => dispatch(deleteFromBasket({id}))}/>
                 </div>
                 <h1 className="price-bas">{price} UAH</h1>
-                <div> Розмір: {entrySize}</div>
+                <div>Розмір: {size}</div>
                 <div className="count-item">Кількість: {count}</div>
             </div>
         </div>    
@@ -46,7 +47,7 @@ const BasketC = () => {
                             name={bas.name}
                             price={bas.price}
                             count={bas.count}
-                            entrySize={bas.entrySize}
+                            size={bas.size}
                         />
                     ))
                 }

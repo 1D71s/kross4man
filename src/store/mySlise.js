@@ -32,26 +32,29 @@ const shopSlice = createSlice({
     reducers: {
         addItemToBasket(state, action) {
             const item = state.product.find(i => i.id === action.payload.id);
-            const existingItem = state.basket.find(i => i.id === action.payload.id);
-            const priceItem = item.price
-
-            const prot = {
-                name: item.name
-            }
-
+            const existingItem = state.basket.find(i => i.id === action.payload.id / action.payload.entrySize);
+            const priceItem = item.price;
+            
+            const newItem = {
+                id: action.payload.id / action.payload.entrySize,
+                img: item.img,
+                name: item.name,
+                price: item.price,
+                count: 1,
+                size: action.payload.entrySize,
+            };
+            
             if (existingItem) {
                 const updatedBasket = state.basket.map(item => {
-                        if (item.id === action.payload.id) {
-                            return { ...item, count: item.count + 1, price: item.price + priceItem};
-                        }
-                        return item;
+                    if (item.id === action.payload.id / action.payload.entrySize) {
+                        return { ...item, count: item.count + 1, price: item.price + priceItem };
+                    }
+                    return item;
                 });
-        
+            
                 return { ...state, basket: updatedBasket };
-
             } else {
-                const updatedBasket = [...state.basket, { ...item, count: 1, size: item.entrySize }];
-        
+                const updatedBasket = [...state.basket, newItem];
                 return { ...state, basket: updatedBasket };
             }
         },

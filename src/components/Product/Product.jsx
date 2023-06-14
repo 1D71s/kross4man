@@ -34,7 +34,7 @@ const ProductItems = ({id, name, img, price, size, entrySize}) => {
                 <h2 className='price-items'>{price}</h2>
             </div>
             <div>
-                <button className='btn-add-to-backet' onClick={() => dispatch(addItemToBasket({id}))}>Купить</button>
+                <button className='btn-add-to-backet' onClick={() => dispatch(addItemToBasket({id, entrySize}))}>Купить</button>
             </div>
         </div>    
     )
