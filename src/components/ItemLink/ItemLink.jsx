@@ -8,16 +8,9 @@ const ItemLink= ({itemProd}) => {
     const id = itemProd.id
     const size = itemProd.size
     const price = itemProd.price
+    const params = itemProd.params
     const entrySize = itemProd.entrySize
-
-
-    const data = {
-        'Виробник ': 'New Balance',
-        'Стать': 'Унісекс',
-        'Сезон': 'Весна/Літо/Осінь',
-        'Країна виробник': "В'єтнам",
-        'Стан': 'Новий',
-    };
+    const data = {...params};
 
     return (
         <div className='item-link'>
