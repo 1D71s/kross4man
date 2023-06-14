@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container">
             <div className="footer-content">
                 <div className="footer-column">
-                    <h3>О нас</h3><br/>
+                    <h3>Про нас</h3><br/>
                     <p>
                         <p>Відправки здійснюються щодня новою поштою. Доставув у середньому займає 1-2 дні</p><br/>
                         <p>У зв'язку з выйськовим становищем у нашый країні при відправці післяплатою береться мінімальна предоплата 120грн на доставку</p><br/>
@@ -16,7 +16,7 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className="footer-column">
-                    <h3>Социальные сети</h3><br/>
+                    <h3>Посилання</h3><br/>
                     <p className='cont-link'>
                         <a href="https://www.instagram.com/kross4man.ua/?igshid=MmJiY2I4NDBkZg%3D%3D"><GrInstagram className='insta'/></a>
                         <a href="https://rshopua.store/" className='ruha'>{}</a>

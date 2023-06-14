@@ -1,18 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { addItemToBasket, addSizeItem, updateEntrySize } from '../../store/mySlise';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import ProductFn from '../ProductFn/ProductFn';
 import images from '../images'
 import './Product.scss'
 
 
 const ProductItems = ({id, name, img, price, size, entrySize}) => {
-
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(updateEntrySize());
-    }, [dispatch]);
 
     return (
         <div className="product-item">
@@ -23,19 +16,11 @@ const ProductItems = ({id, name, img, price, size, entrySize}) => {
                 <Link to={`/${id}`}>
                     <p className='name-items'>{name}</p>
                 </Link>
-                <div className='size-cont'>
-                    {size.map((i) => (
-                        <span 
-                            key={i} 
-                            className={`size-item ${entrySize === i ? 'active' : ''}`}
-                            onClick={() => dispatch(addSizeItem({id, i}))}>{i}</span>
-                    ))}
-                </div>
-                <h2 className='price-items'>{price}</h2>
+                
+                <ProductFn price={price} size={size} entrySize={entrySize} id={id}/>
+
             </div>
-            <div>
-                <button className='btn-add-to-backet' onClick={() => dispatch(addItemToBasket({id, entrySize}))}>Купить</button>
-            </div>
+            
         </div>    
     )
 } 

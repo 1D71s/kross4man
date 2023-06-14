@@ -47,44 +47,6 @@
     margin-top: auto;
 }
 
-.price-items {
-    color: rgb(253, 101, 0);
-}
-
-.btn-add-to-backet {
-    font-family: 'Geologica', sans-serif;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
-    background-color: rgb(65, 65, 65);
-    color: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 5px rgb(24, 24, 24);
-    display: inline-block;
-}
-
-
-.btn-add-to-backet:hover {
-    transform: scale(1.05);
-    transition: transform 500ms ease;
-}
-.size-cont {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    font-family: 'Geologica', sans-serif;
-    .size-item {
-        cursor: pointer;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    
-    .size-item:hover {
-        background-color: rgb(250, 126, 44);
-    }
-}
 
 .selected {
     background-color: #ff0000;

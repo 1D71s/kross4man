@@ -1,7 +1,15 @@
-import './ItemLink.scss'
+import ProductFn from '../ProductFn/ProductFn';
 import Slider from '../Slider/Slider'
+import './ItemLink.scss'
+
 
 const ItemLink= ({itemProd}) => {
+
+    const id = itemProd.id
+    const size = itemProd.size
+    const price = itemProd.price
+    const entrySize = itemProd.entrySize
+
 
     const data = {
         'Виробник ': 'New Balance',
@@ -16,11 +24,21 @@ const ItemLink= ({itemProd}) => {
             <div>
                 <Slider/>
             </div>
+
+            <div className='name-item' >{itemProd.name}</div>
+
             <div className='cont-descr'>
-                <div className='name-item' >{itemProd.name}</div>
-                <div className='descr-price'>{itemProd.price} UAH</div>
-                <div className='descr'>{itemProd.description}</div>
+                
+                {itemProd && itemProd.description && (
+                    <>
+                        <div className='count-itemfn'>
+                            <ProductFn price={`${price} UAH`} size={size} entrySize={entrySize} id={id}/>
+                        </div>
+                        <div className='descr'>{itemProd.description}</div>
+                    </>
+                )}
             </div>
+
             <table className='table'>
                 <tbody>
                     {Object.entries(data).map(([key, value]) => (

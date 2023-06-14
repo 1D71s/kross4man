@@ -63,7 +63,8 @@ const shopSlice = createSlice({
         }, 
         addSizeItem(state, action) {
             const item = state.product.find(i => i.id === action.payload.id);
-
+            
+            state.renderItem.entrySize = action.payload.i
             item.entrySize = action.payload.i
         },
         updateEntrySize: (state, action) => {
