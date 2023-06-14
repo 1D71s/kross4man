@@ -32,9 +32,10 @@
 }
 
 .table {
+    display: block;
     border-collapse: collapse;
-    width: 100%;
     margin: 30px;
+    margin-left: 0;
     padding: 30px;
     font-family: 'Geologica', sans-serif;
 }

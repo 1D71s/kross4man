@@ -13,21 +13,21 @@ const shopSlice = createSlice({
         addItemToBasket(state, action) {
             const item = state.product.find(i => i.id === action.payload.id);
             const existingItem = state.basket.find(i => i.id === action.payload.id / action.payload.entrySize);
-            const priceItem = item.price;
+            const priceItem = item.price * action.payload.count;
             
             const newItem = {
                 id: action.payload.id / action.payload.entrySize,
                 img: item.img,
                 name: item.name,
-                price: item.price,
-                count: 1,
+                price: item.price * action.payload.count,
+                count: action.payload.count,
                 size: action.payload.entrySize,
             };
             
             if (existingItem) {
                 const updatedBasket = state.basket.map(item => {
                     if (item.id === action.payload.id / action.payload.entrySize) {
-                        return { ...item, count: item.count + 1, price: item.price + priceItem };
+                        return { ...item, count: item.count + action.payload.count, price: item.price + priceItem };
                     }
                     return item;
                 });

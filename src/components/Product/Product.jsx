@@ -5,6 +5,7 @@ import images from '../images'
 import './Product.scss'
 
 
+
 const ProductItems = ({id, name, img, price, size, entrySize}) => {
 
     return (
@@ -30,19 +31,24 @@ const Product = () => {
     const product = useSelector(state => state.shop.product)
     
     return (
-        <div className="product">
-            {
-                product.map(prod => (
-                    <ProductItems 
-                        id={prod.id}
-                        key={prod.id}
-                        img={prod.img}
-                        name={prod.name}
-                        size={prod.size}
-                        entrySize={prod.entrySize}
-                        price={`${prod.price} UAH`}/>
-                ))
-            }
+        <div className='container-product'>
+            <div className='search'>
+                <input type="text" placeholder='Пошук'/>
+            </div>
+            <div className="product">
+                {
+                    product.map(prod => (
+                        <ProductItems 
+                            id={prod.id}
+                            key={prod.id}
+                            img={prod.img}
+                            name={prod.name}
+                            size={prod.size}
+                            entrySize={prod.entrySize}
+                            price={`${prod.price} UAH`}/>
+                    ))
+                }
+            </div>
         </div>    
     )
 } 
