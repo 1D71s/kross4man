@@ -7,7 +7,7 @@ const shopSlice = createSlice({
         product: [...DBprod],
         basket: [],
         orders: [],
-        renderItem: {}
+        renderItem: {},
     },
     reducers: {
         addItemToBasket(state, action) {
@@ -56,10 +56,23 @@ const shopSlice = createSlice({
             const item = state.product.find(i => i.id === Number(action.payload.id));
             state.renderItem = item
             state.renderItem.entrySize = item.size[0] 
-        }
+        },
+        sortOld(state) {
+            state.product.sort((a, b) => b.id - a.id);
+        },
+        sortNew(state) {
+            state.product.sort((a, b) => a.id - b.id)
+
+        }, 
+        sortPriceD(state) {
+            state.product.sort((a, b) => a.price - b.price);
+        },
+        sortPriceU(state) {
+            state.product.sort((a, b) => b.price - a.price);
+        },
     }
 })
 
 
-export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem } = shopSlice.actions
+export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem, sortOld, sortNew, sortPriceD, sortPriceU } = shopSlice.actions
 export default shopSlice.reducer

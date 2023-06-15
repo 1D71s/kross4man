@@ -5,14 +5,14 @@
     max-width: 1340px;
     background-color: white;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .container-product {
     max-width: 1340px;
     background-color: white;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
     border-radius: 20px;
     box-shadow: 0px 0px 9px grey;
@@ -69,18 +69,72 @@ Link {
     text-decoration: none;
 }
 
-.search {
-    position: relative;
+.parent-filt {
     max-width: 400px;
-    width: 100%;
+    .btn-filt {
+        font-family: 'Geologica', sans-serif;
+        padding: 10px 20px 10px 20px;
+        border: none;
+        color: white;
+        background-color: rgb(65, 65, 65);
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 18px;
+    }
 }
 
-.search input {
-    width: 100%;
-    height: 25px;
+.filter-cont {
+    margin-top: -100px;
+    background-color: #ffffff;
+    padding: 20px;
+    transition: margin-top 0.5s;
     border-radius: 20px;
-    padding: 10px;
+    box-shadow: 0px 1px 5px grey;
+    max-width: 350px;
+    
+}
+  
+.filter-cont.show {
+    margin-top: 10px;
+    animation-name: slideIn;
+    animation-duration: 0.6s;
+}
+  
+@keyframes slideIn {
+    from {
+        margin-top: -20px;
+    }
+    to {
+        margin-top: 10px;
+    }
+}
+  
+.sort-brand {
+    font-family: 'Geologica', sans-serif;
     font-size: 18px;
-    outline: none;
-    border: 1px solid gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.li {
+    font-size: 18px;
+    font-family: 'Geologica', sans-serif;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.active-sort {
+    font-size: 18px;
+    font-family: 'Geologica', sans-serif;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: rgb(65, 65, 65);
+    color: white;
+    padding: 7px 15px 7px 15px;
+    border-radius: 10px;
 }
