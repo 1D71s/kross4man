@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/kross4man/static/css/main.9a0ce4c0.css",
+    "main.js": "/kross4man/static/js/main.5b2c8e91.js",
+    "static/media/1.jpeg": "/kross4man/static/media/1.cb43df656aaf359f5f1d.jpeg",
+    "static/media/1.5.webp": "/kross4man/static/media/1.5.0f413b27c1b296c2445d.webp",
+    "static/media/3.1.webp": "/kross4man/static/media/3.1.2b934121b6e5e6212edf.webp",
+    "static/media/2.jpg": "/kross4man/static/media/2.5fec77ca8a5b66f8eef7.jpg",
+    "static/media/6.webp": "/kross4man/static/media/6.17aa34734aca60982c6c.webp",
+    "static/media/7.1.webp": "/kross4man/static/media/7.1.e0b53ac7de05d813b928.webp",
+    "static/media/10.1.webp": "/kross4man/static/media/10.1.a2ee592c67e69a4481f6.webp",
+    "static/media/9.1.webp": "/kross4man/static/media/9.1.80c0a02d859a75fac159.webp",
+    "static/media/2.1.webp": "/kross4man/static/media/2.1.d42dd24d4d84a6f6bc2f.webp",
+    "static/media/6.1.webp": "/kross4man/static/media/6.1.ff515a1b17f8018f7f19.webp",
+    "static/media/8.1.webp": "/kross4man/static/media/8.1.5deb06c477448f19308d.webp",
+    "static/media/4.1.webp": "/kross4man/static/media/4.1.dfdc699d06c15c6cfca2.webp",
+    "static/media/2.webp": "/kross4man/static/media/2.147010c3c1b43e52f3bc.webp",
+    "static/media/1.webp": "/kross4man/static/media/1.a591e89e93507522c11b.webp",
+    "static/media/7.webp": "/kross4man/static/media/7.46a8c332f58547c18109.webp",
+    "static/media/5.1.webp": "/kross4man/static/media/5.1.12695108b347a4b01a71.webp",
+    "static/media/1.3.webp": "/kross4man/static/media/1.3.b89a68833d8566ed34dd.webp",
+    "static/media/3.webp": "/kross4man/static/media/3.49eaa620476884f7a122.webp",
+    "static/media/1.2.webp": "/kross4man/static/media/1.2.620abff28c20b9a43f46.webp",
+    "static/media/1.jpg": "/kross4man/static/media/1.3f7d167d3bec1deb80c0.jpg",
+    "static/media/np.jpg": "/kross4man/static/media/np.f09f81ed98290f6811aa.jpg",
+    "static/media/1.1.webp": "/kross4man/static/media/1.1.a6ac679fa98c90895e30.webp",
+    "static/media/4.webp": "/kross4man/static/media/4.09bba0ef2ed74bcf1b2a.webp",
+    "static/media/8.webp": "/kross4man/static/media/8.13278a4ad709bc553fd4.webp",
+    "static/media/3.jpg": "/kross4man/static/media/3.435e8e92e9750282df01.jpg",
+    "static/media/5.webp": "/kross4man/static/media/5.8962a1f34a9a448da0f8.webp",
+    "static/media/10.webp": "/kross4man/static/media/10.26c8cf1daa74448a7c43.webp",
+    "static/media/9.webp": "/kross4man/static/media/9.86f7755b6c3107a21436.webp",
+    "static/media/1.4.webp": "/kross4man/static/media/1.4.41e19947eb357f96fd86.webp",
+    "index.html": "/kross4man/index.html",
+    "main.9a0ce4c0.css.map": "/kross4man/static/css/main.9a0ce4c0.css.map",
+    "main.5b2c8e91.js.map": "/kross4man/static/js/main.5b2c8e91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a0ce4c0.css",
+    "static/js/main.5b2c8e91.js"
+  ]
+}
