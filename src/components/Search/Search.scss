@@ -9,7 +9,8 @@
     width: 100%;
     height: 25px;
     border-radius: 20px;
-    padding: 10px;
+    height: 50px;
+    padding-left: 10px;
     font-size: 18px;
     outline: none;
     border: 1px solid gray;
@@ -34,4 +35,27 @@
     .search input {
         font-size: 14px;
     }
+}
+
+
+.search-result {
+    display: block;
+    max-width: 1340px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 9px grey;
+    padding: 40px;
+}
+
+.search-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* автоматические колонки, каждая минимум 300px ширины */
+    grid-gap: 40px; /* промежуток между блоками */
+    max-width: 1340px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 30px;
 }

@@ -52,3 +52,25 @@
     text-align: left;
     border: 1px solid #ddd;
 }
+
+@media (max-width: 600px) {
+    .item-link {
+        padding: 10px;
+    }
+
+    .name-item {
+        margin: 10px;
+        font-size: 23px;
+    }
+
+    .descr {
+        margin-left: 10px;
+    }
+
+    .table {
+        margin: 0px;
+    }
+    .count-itemfn {
+        margin: 20px 10px;
+    }
+}

@@ -116,3 +116,29 @@
         font-size: 25px;
     }
 }
+
+
+@media (max-width: 550px) {
+    .basketc-item {
+        font-size: 14px;
+        img {
+            max-width: 150px;
+            max-height: 150px;
+        }
+        .name-items {
+            font-size: 14px;
+        }
+    }
+
+    .price-bas {
+        font-size: 16px;
+    }
+
+    .count-item {
+        font-size: 14px;
+    }
+
+    .basketc {
+        padding: 15px;
+    }
+}

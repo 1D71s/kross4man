@@ -4,6 +4,7 @@ import DBprod from "../Db";
 const shopSlice = createSlice({
     name: 'shop',
     initialState: {
+        search: [],
         product: [...DBprod],
         basket: [],
         orders: [],
@@ -46,9 +47,14 @@ const shopSlice = createSlice({
         }, 
         addSizeItem(state, action) {
             const item = state.product.find(i => i.id === action.payload.id);
+            const itemm = state.search.find(i => i.id === action.payload.id);
             
             state.renderItem.entrySize = action.payload.i
+
             item.entrySize = action.payload.i
+            if (state.search.length > 0) {
+                itemm.entrySize = action.payload.i
+            }
         },
         updateEntrySize: (state, action) => {
             state.product.forEach((product) => {
@@ -79,10 +85,32 @@ const shopSlice = createSlice({
         },
         toActivBrand(state, action) {
             state.activBrand = action.payload.brand
+        },
+        toSearch(state, action) {
+
+            const names = state.product.map(i => [i.name.toLowerCase(), i.id]) ;
+
+            const value = action.payload.e.toLowerCase().split(' ')
+            const result = names.map(item => [item[0].split(' '), item[1]]);
+
+            const searchFin = value.map(item => {
+                const iditi = []
+                for (let i = 0; i < result.length; i++) {
+                    const res = result[i][0]
+                    if (res.includes(item)) {
+                        iditi.push(result[i][1])
+                    }
+                }
+                return iditi
+            })
+
+            const fil = searchFin[searchFin.length - 1].length < 1 ? searchFin[0] :  searchFin[searchFin.length - 1]
+
+            state.search = state.product.filter(i => fil.includes(i.id) )
         }
     }
 })
 
 
-export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem, sortOld, sortNew, sortPriceD, sortPriceU, toActivBrand } = shopSlice.actions
+export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem, sortOld, sortNew, sortPriceD, sortPriceU, toActivBrand, toSearch } = shopSlice.actions
 export default shopSlice.reducer
