@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kross4man/static/css/main.de87bc74.css",
-    "main.js": "/kross4man/static/js/main.3025dcf9.js",
+    "main.js": "/kross4man/static/js/main.c1985d73.js",
     "static/media/1.jpeg": "/kross4man/static/media/1.cb43df656aaf359f5f1d.jpeg",
     "static/media/1.5.webp": "/kross4man/static/media/1.5.0f413b27c1b296c2445d.webp",
     "static/media/3.1.webp": "/kross4man/static/media/3.1.2b934121b6e5e6212edf.webp",
@@ -33,10 +33,10 @@
     "static/media/1.4.webp": "/kross4man/static/media/1.4.41e19947eb357f96fd86.webp",
     "index.html": "/kross4man/index.html",
     "main.de87bc74.css.map": "/kross4man/static/css/main.de87bc74.css.map",
-    "main.3025dcf9.js.map": "/kross4man/static/js/main.3025dcf9.js.map"
+    "main.c1985d73.js.map": "/kross4man/static/js/main.c1985d73.js.map"
   },
   "entrypoints": [
     "static/css/main.de87bc74.css",
-    "static/js/main.3025dcf9.js"
+    "static/js/main.c1985d73.js"
   ]
 }
