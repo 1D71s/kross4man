@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import './Basket.scss'
 import { useSelector, useDispatch } from "react-redux"
 import images from '../images'
@@ -33,6 +33,10 @@ const ItemBasket = ({img, name, price, id, size, count}) => {
 const BasketC = () => {
     const basket = useSelector(state => state.shop.basket)
     const totalPrice = basket.reduce((sum, item) => sum + item.price, 0);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div>

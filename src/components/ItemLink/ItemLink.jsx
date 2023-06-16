@@ -1,7 +1,7 @@
 import ProductFn from '../ProductFn/ProductFn';
 import Slider from '../Slider/Slider'
 import './ItemLink.scss'
-
+import { useEffect } from 'react';
 
 const ItemLink= ({itemProd}) => {
 
@@ -11,6 +11,10 @@ const ItemLink= ({itemProd}) => {
     const params = itemProd.params
     const entrySize = itemProd.entrySize
     const data = {...params};
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className='item-link'>

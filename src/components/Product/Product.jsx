@@ -4,8 +4,8 @@ import ProductFn from '../ProductFn/ProductFn';
 import images from '../images'
 import { BiChevronUp } from "react-icons/bi";
 import './Product.scss'
-import { useState } from 'react';
-import { sortOld, sortNew, sortPriceD, sortPriceU } from '../../store/mySlise';
+import { useState, useEffect } from 'react';
+import { sortOld, sortNew, sortPriceD, sortPriceU, toActivBrand } from '../../store/mySlise';
 
 const ProductItems = ({id, name, img, price, size, entrySize}) => {
 
@@ -29,15 +29,24 @@ const ProductItems = ({id, name, img, price, size, entrySize}) => {
 
 
 const Product = () => {
-    const product = useSelector(state => state.shop.product)
+
+    const all = useSelector(state => state.shop.product)
+    
+    let [product, setProduct] = useState(all)
+    
+
+    const sort = useSelector(state => state.shop.activeButtonSort)
+
+    const brand = useSelector(state => state.shop.categoryBrand)
+    const actBrand = useSelector(state => state.shop.activBrand)
+
     const [filter, setFilter] = useState(false)
 
-    const uniqueCategories = Array.from(new Set(product.map(it => it.category)));
-    const uniqCat = ['Всі', ...uniqueCategories]
-
-    const [activeButton, setActiveButton] = useState('sortToNew');
+    const [activeButton, setActiveButton] = useState(sort);
+    const [activeBrand, setActiveBrand] = useState(actBrand)
 
     const dispatct = useDispatch()
+
 
     const sortToOld = () => {
        dispatct(sortOld())
@@ -57,6 +66,21 @@ const Product = () => {
     const sortToPriceUp = () => {
         dispatct(sortPriceU())
         setActiveButton('sortToPriceUp')
+    }
+
+    useEffect(() => {
+        setProduct(all)
+        filtherOfBrand(actBrand)
+    }, [all])
+
+    const filtherOfBrand = brand => {
+        if (brand === 'all') {
+            setProduct(all)
+        } else {
+            setProduct(product = all.filter(i => i.category === brand))
+        }
+        dispatct(toActivBrand({brand}))
+        setActiveBrand(brand)
     }
 
 
@@ -84,8 +108,8 @@ const Product = () => {
                         </ul>
                         <div className='sort-brand'>Бренди:</div>
                         <ul>
-                            {uniqCat.map(category => (
-                                <button key={category} className='li'>{category}</button>    
+                            {brand.map(category => (
+                                <button key={category} className={`li ${activeBrand === category ? 'active-sort' : ''}`} onClick={() => filtherOfBrand(category)}>{category}</button>    
                             ))}
                         </ul>
                     </div>}

@@ -8,6 +8,9 @@ const shopSlice = createSlice({
         basket: [],
         orders: [],
         renderItem: {},
+        activeButtonSort: 'sortToNew',
+        activBrand: 'all',
+        categoryBrand: ['all', 'adidas', 'nike', 'new balance', 'vans', 'under armour']
     },
     reducers: {
         addItemToBasket(state, action) {
@@ -59,20 +62,27 @@ const shopSlice = createSlice({
         },
         sortOld(state) {
             state.product.sort((a, b) => b.id - a.id);
+            state.activeButtonSort = 'sortToOld'
         },
         sortNew(state) {
             state.product.sort((a, b) => a.id - b.id)
+            state.activeButtonSort = 'sortToNew'
 
         }, 
         sortPriceD(state) {
             state.product.sort((a, b) => a.price - b.price);
+            state.activeButtonSort = 'sortToPriceDown'
         },
         sortPriceU(state) {
             state.product.sort((a, b) => b.price - a.price);
+            state.activeButtonSort = 'sortToPriceUp'
         },
+        toActivBrand(state, action) {
+            state.activBrand = action.payload.brand
+        }
     }
 })
 
 
-export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem, sortOld, sortNew, sortPriceD, sortPriceU } = shopSlice.actions
+export const { addItemToBasket, deleteFromBasket, addSizeItem, updateEntrySize, renderToItem, sortOld, sortNew, sortPriceD, sortPriceU, toActivBrand } = shopSlice.actions
 export default shopSlice.reducer
