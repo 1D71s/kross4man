@@ -1,37 +1,45 @@
 import './FormToOrder.scss'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import FormValid from './FormValid';
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const FormToOrder = () => {
+
+    const [ resultForm, setResultForm ] = useState(false)
+    const [formValidation, setFormValidation] = useState({
+        name: false,
+        lastName: false,
+        phone: false,
+        sity: false,
+        point: false,
+    })
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+
+    const toggleResult = () => {
+        const {name, lastName, phone, sity, point} = formValidation
+        if (name && lastName && phone && sity && point) {
+            setResultForm(true)
+        }
+    }
+
     return (
         <div className='form-to-order'>
-            <div>
-                <p className='otd'>Доставка:</p>
-                <p className='np'></p>
-            </div>
-            <div>
-                <div className='otd'>Данні отримувача:</div>
-                <p>Прізвище</p>
-                <input type="text" />
-                <p>Iм'я</p>
-                <input type="text" />
-                <p>Телефон</p>
-                <input type="text" />
-                <p>Місто</p>
-                <input type="text" />
-                <p>Відділення</p>
-                <input type="text" />
-                <p>Коментар</p>
-                <input type="text" />
+
+            {!resultForm ? <FormValid toggleResult={toggleResult} formValidation={formValidation}/> : <div>
+                <div className='success'> <AiOutlineCheckCircle className='success-icon'/>
+                    Замовлення успішно відправленно, наш менеджер зв'яжеться з вами на протязі дня!
+                </div> 
                 
-            </div>
-            <div className='btn-finish'>
-                <div>Підтвердити</div>
-            </div>
+                <Link to='/'>
+                    <button className='btn-tohome'>На головну</button>
+                </Link>
+                
+            </div>}
 
 
         </div>    

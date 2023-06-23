@@ -1,5 +1,6 @@
 import './navbar.scss';
 import { FiShoppingCart } from "react-icons/fi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ function NavBar() {
                 </div>
             </Link>
             <div className='cont-basket'>
+                <Link to='/search'><AiOutlineSearch className='search-icon'/></Link>
                 <Link to='/Basket'><FiShoppingCart className='basket'/></Link>
                 {basket.length > 0 &&<p className='counter-basket'>{basket.length}</p>}
             </div>

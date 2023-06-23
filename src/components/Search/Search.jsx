@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { toSearch } from '../../store/mySlise'
+import { useState, useEffect } from 'react'
+import { toSearch, updateEntrySize } from '../../store/mySlise'
 import './Search.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
@@ -29,6 +29,10 @@ const ProductItems = ({id, name, img, price, size, entrySize}) => {
 } 
 
 const Search = () => {
+
+    useEffect(() => {
+        dispatch(updateEntrySize());
+    }, []);
 
     const search = useSelector(state => state.shop.search)
     const [text, setText] = useState('')

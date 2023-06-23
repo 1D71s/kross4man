@@ -102,3 +102,16 @@ li {
     font-family: 'Geologica', sans-serif;
 }
 
+.search-icon {
+    color: black;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+    transition: transform 500ms ease;
+}

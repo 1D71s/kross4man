@@ -5,9 +5,9 @@ const shopSlice = createSlice({
     name: 'shop',
     initialState: {
         search: [],
+        orders: [],
         product: [...DBprod],
         basket: [],
-        orders: [],
         renderItem: {},
         activeButtonSort: 'sortToNew',
         activBrand: 'all',
@@ -25,7 +25,7 @@ const shopSlice = createSlice({
                 name: item.name,
                 price: item.price * action.payload.count,
                 count: action.payload.count,
-                size: action.payload.entrySize,
+                size: action.payload.entrySize, 
             };
             
             if (existingItem) {
@@ -88,25 +88,37 @@ const shopSlice = createSlice({
         },
         toSearch(state, action) {
 
-            const names = state.product.map(i => [i.name.toLowerCase(), i.id]) ;
+            const names = state.product.map(i => [i.name.toLowerCase().split(' ').filter(i => i !== '-').join(''), i.id])
+            const value = action.payload.e.toLowerCase().split(' ').join('')
 
-            const value = action.payload.e.toLowerCase().split(' ')
-            const result = names.map(item => [item[0].split(' '), item[1]]);
-
-            const searchFin = value.map(item => {
-                const iditi = []
-                for (let i = 0; i < result.length; i++) {
-                    const res = result[i][0]
-                    if (res.includes(item)) {
-                        iditi.push(result[i][1])
+            const searchAll = () => {
+                let result = []
+                for (let i = 0; i < names.length; i++) {
+                    for (let j = 0; j < names[i][0].length; j++) {
+                        let start = ''
+                        for (let g = j; g < names[i][0].length; g++) {
+                            start += names[i][0][g]
+                            if (start === value) {
+                                result.push(names[i][1])
+                            }
+                        }
                     }
                 }
-                return iditi
-            })
+                return result
+            }
 
-            const fil = searchFin[searchFin.length - 1].length < 1 ? searchFin[0] :  searchFin[searchFin.length - 1]
-
-            state.search = state.product.filter(i => fil.includes(i.id) )
+            const pluses = arr => {
+                const result = []
+                for (let i = 0; i < arr.length; i++) {
+                    if (!result.includes(arr[i])) result.push(arr[i])
+                }
+                return result
+            }
+ 
+            
+            const fil = pluses(searchAll())
+            
+            state.search = state.product.filter(i => fil.includes(i.id))
         }
     }
 })

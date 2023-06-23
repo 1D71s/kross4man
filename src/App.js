@@ -4,7 +4,9 @@ import { Layout } from './components/Layout'
 import { Basket } from './pages/Basket'
 import { Home } from './pages/home.jsx'
 import { Form } from './pages/Form.jsx'
+import { SearchPage } from './pages/Search.jsx'
 import { ItemPages } from './pages/ItemPage';
+
 import './App.css'
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
                     <Route path='/basket' element={<Basket/>}/>
                     <Route path='/form' element={<Form/>}/>
                     <Route path='/:id' element={<ItemPages/>}/>
+                    <Route path='/search' element={<SearchPage/>}/>
                 </Route>
             </Routes>
         </div>
